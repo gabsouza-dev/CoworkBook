@@ -35,6 +35,51 @@ Criar um sistema onde usuários possam reservar salas de reunião ou espaços de
 - Dashboard com gráficos de ocupação (usando Chart.js)  
 - Notificações em tempo real (com WebSockets)  
 
+Aqui está uma estrutura bem organizada para o **WorkSpace Manager**, usando **PHP, TypeScript e Bootstrap**, separando bem back-end e front-end para facilitar manutenção e escalabilidade.  
+
+---
+
+### 📂 **Estrutura de Diretórios**
+```
+CoworkBook/
+│── backend/                       # Código do back-end em PHP
+│   ├── config/                    # Configurações do banco de dados
+│   │   ├── database.php           # Conexão com MySQL
+│   ├── controllers/               # Lógica da aplicação (CRUD)
+│   │   ├── AuthController.php     # Login e autenticação
+│   │   ├── BookingController.php  # Gerenciamento de reservas
+│   │   ├── UserController.php     # Gerenciamento de usuários
+│   ├── models/                    # Modelos representando tabelas do BD
+│   │   ├── User.php
+│   │   ├── Booking.php
+│   ├── routes/                    # Rotas da API REST
+│   │   ├── api.php                # Endpoints da aplicação
+│   ├── middleware/                # Autenticação e segurança
+│   │   ├── AuthMiddleware.php
+│   ├── utils/                     # Funções auxiliares
+│   │   ├── helpers.php            # Envio de e-mails, logs, etc.
+│   ├── public/                    # Arquivos acessíveis pela web
+│   │   ├── index.php              # Entrada principal da API
+│── frontend/                      # Código do front-end em TypeScript e Bootstrap
+│   ├── src/                       # Código principal
+│   │   ├── assets/                # Imagens, ícones e fontes
+│   │   ├── components/            # Componentes reutilizáveis (NavBar, Cards, etc.)
+│   │   ├── pages/                 # Páginas (Home, Login, Reservas, Admin)
+│   │   ├── services/              # Comunicação com API
+│   │   │   ├── api.ts             # Configuração da API (fetch, axios)
+│   │   │   ├── auth.ts            # Funções de autenticação
+│   │   │   ├── booking.ts         # Funções de reservas
+│   │   ├── styles/                # CSS customizado com Bootstrap
+│   ├── index.html                 # Página principal
+│   ├── main.ts                    # Entrada do TypeScript
+│── database/                      # Scripts SQL
+│   ├── schema.sql                 # Estrutura das tabelas
+│── .env                           # Variáveis de ambiente (DB, JWT, etc.)
+│── package.json                   # Dependências do front-end
+│── composer.json                  # Dependências do back-end PHP
+│── README.md                      # Documentação do projeto
+```
+
 ---
 
 Esse projeto é versátil, dá pra usar em escritórios, coworkings, academias, etc. 🚀
